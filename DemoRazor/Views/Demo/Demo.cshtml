@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo</title>
+</head>
+<body>
+    <div>
+        @*Tạo thẻ form*@
+        @using (Html.BeginForm("Demo", "Demo"))
+        {
+            @*Tạo thẻ TextBox *@
+            //thẻ input có type =text
+            <h5>Thẻ TextBox</h5>
+            @Html.TextBox("txtHoTen", "text", new { @id = "id1" })
+            <br />
+            <br />
+            <h5>Thẻ TextArea</h5>
+            @*Tạo Thẻ TextArea*@
+            @Html.TextArea("txtDiaChi", new { @cols = "20", @rows = "5" })
+            <br />
+            <h5>Thẻ PassWord</h5>
+            //thẻ password
+            @Html.Password("pass", "giatri", new { @id = "pass" })
+            <br />
+            <h5>Thẻ Acction link hay thẻ a trong html</h5>
+            @Html.ActionLink("Tên Đường dẫn", "Index", "Demo", new { @thamso = "" }, new
+            { @id = "id", @class = "class" })
+
+            <br />
+            <h5>Thẻ RadioButton</h5>
+            @Html.RadioButton("GioiTinh", 0, true) <span>Nam</span>
+            @Html.RadioButton("GioiTinh", 1, false) <span>Nữ</span>
+
+            <br />
+            <h5>Thẻ dropdownlist</h5>
+            SelectList TinhThanhP = (SelectList)ViewBag.tennaocungduoc;
+             <span>Thành Phố:</span>@Html.DropDownList("TenDDL", TinhThanhP, new { id ="tagSelection"});
+        }
+    </div>
+</body>
+</html>
