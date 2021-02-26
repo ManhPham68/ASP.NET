@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DangNhap</title>
+</head>
+<body>
+    @using (Html.BeginForm("ThongTinTaiKhoan", "Login",new {@HoTen="Manh Dollar" }))
+    {
+    <center>
+        <div class="container">
+            <h1>Đăng Nhập</h1>
+            <div class="row">
+                <div class="center-block">
+                    <span> Tên đăng nhập : @Html.TextBox("txtTenDangNhap")</span><br /><br />
+                </div>
+                <span> Mật Khẩu : </span> @Html.Password("txtMatKhau", "", new { Style = "margin: 15px -28px 12px 0px;" })
+            </div>
+            <input style=" margin: 10px -8px 0px 5px"  type="submit" value="Đăng Nhập"/>
+    </center>
+    }
+</body>
+</html>
